@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5ef">
+  <meta name="description" content="A document-grounded research assistant for the Agentic AI eBook.">
+  <title>Fieldnotes | Agentic AI eBook</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js?v=2" defer></script>
+</head>
+<body>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="Research workspace">
+      <a class="brand" href="/" aria-label="Fieldnotes home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>fieldnotes<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="workspace-label">RESEARCH DESK <span>01</span></div>
+      <section class="source-block" aria-labelledby="source-title">
+        <div class="book-cover" aria-hidden="true">
+          <div class="cover-top">A FIELD GUIDE</div>
+          <div class="cover-rule"></div>
+          <div class="cover-title">Agentic<br>AI</div>
+          <div class="cover-orbit orbit-one"></div>
+          <div class="cover-orbit orbit-two"></div>
+          <div class="cover-foot">KONVERGE</div>
+        </div>
+        <div class="source-copy">
+          <div class="eyebrow">YOUR SOURCE</div>
+          <h1 id="source-title">Agentic AI<br>eBook</h1>
+          <p>Konverge · PDF document</p>
+          <span class="source-status"><span class="status-dot" id="source-dot"></span><span id="source-state">Checking index</span></span>
+        </div>
+      </section>
+
+      <section class="index-panel" aria-label="Index status">
+        <div class="index-line"><span>VECTOR INDEX</span><span id="index-count">—</span></div>
+        <div class="index-meter"><span id="index-meter-fill"></span></div>
+        <div class="index-foot"><span id="index-name">agentic-ai-ebook</span><span id="index-label">Checking</span></div>
+      </section>
+
+      <div class="side-heading">ASK THE BOOK</div>
+      <nav class="prompt-list" aria-label="Suggested questions">
+        <button class="prompt-link" data-query="What is the core definition of Agentic AI in the eBook?"><span>01</span><b>Definition &amp; scope</b><span class="prompt-arrow">↗</span></button>
+        <button class="prompt-link" data-query="What are the main architectural components of an agentic system?"><span>02</span><b>System architecture</b><span class="prompt-arrow">↗</span></button>
+        <button class="prompt-link" data-query="Which real-world industry use cases are discussed?"><span>03</span><b>Industry use cases</b><span class="prompt-arrow">↗</span></button>
+        <button class="prompt-link" data-query="How does Agentic AI differ from a traditional generative AI chatbot?"><span>04</span><b>Compare paradigms</b><span class="prompt-arrow">↗</span></button>
+        <button class="prompt-link" data-query="What challenges and limitations of Agentic AI does the eBook mention?"><span>05</span><b>Risks &amp; limits</b><span class="prompt-arrow">↗</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="ingest-button" id="ingest-button" type="button"><span class="ingest-icon" aria-hidden="true">↻</span><span id="ingest-label">Build / refresh index</span></button>
+        <p class="source-note">Answers are limited to this document.<br><a href="https://konverge.ai/pdf/Ebook-Agentic-AI.pdf" target="_blank" rel="noreferrer">View source PDF <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>LIBRARY</span><span class="crumb-slash">/</span><strong>AGENTIC AI</strong></div>
+        <div class="topbar-actions"><span class="privacy-note"><span class="privacy-mark" aria-hidden="true">●</span> Source-grounded mode</span><button id="clear-button" class="clear-button" type="button" title="Clear this conversation">Clear chat</button></div>
+      </header>
+
+      <section class="conversation" id="conversation" aria-live="polite" aria-label="Conversation">
+        <div class="welcome" id="welcome">
+          <div class="welcome-kicker"><span class="kicker-rule"></span> A DOCUMENT-BOUND ASSISTANT</div>
+          <h2>Read between<br>the <em>pages.</em></h2>
+          <p>Ask a question about Agentic AI. Every answer is drawn from the eBook, with page references you can follow back to the source.</p>
+          <div class="welcome-meta"><span>01</span><span>ONE SOURCE · NO GUESSWORK</span><span class="meta-line"></span></div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <footer class="composer-area">
+        <form class="composer" id="chat-form">
+          <label class="visually-hidden" for="query-input">Ask a question about the eBook</label>
+          <textarea id="query-input" rows="1" maxlength="2000" placeholder="Ask something about the eBook…" required></textarea>
+          <div class="composer-bottom"><span id="composer-hint">Answers cite the pages they come from.</span><button class="send-button" id="send-button" type="submit">Ask the book <span aria-hidden="true">↗</span></button></div>
+        </form>
+        <div class="footer-caption"><span>RESEARCH ASSISTANT</span><span>BUILT AROUND ONE BOOK</span></div>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
